@@ -1,6 +1,6 @@
 import {gql} from 'graphql-tag';
 export const MockData = {
-  Initialize:{
+  All_Query:{
     query:gql`query InitData{
       dancer {
         name
@@ -57,7 +57,16 @@ export const MockData = {
       colorMap {
         colorMap
       }
-    }`,
-    variables: null
+      effectList {
+        start
+        end
+        description
+        id
+        data
+      }
+      LEDMap {
+        LEDMap
+      }
+    }`
   }
 }

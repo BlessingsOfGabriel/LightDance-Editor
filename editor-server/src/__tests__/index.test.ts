@@ -17,10 +17,62 @@ const client = new ApolloClient({
   onError: (e) => { console.log(e) }
 });
 
-describe('End-to-End Test', () => {
-  it('Test0: Query-Initialize Data', async () => {
-    const response = await client.query(MockData.Initialize);
+describe('Test0: Initialize Data', () => {
+  it('Query: Initialize Data', async () => {
+    const response = await client.query(MockData.All_Query);
     expect(response.errors).toBeUndefined();
-    expect(response.data).toBe(MockResult.Initialize);
+    expect(response.data).toEqual(MockResult.Initialize);
   });
 });
+
+/*describe('Test1: Add or Edit Control Frame', () => {
+  it('Mutate: Add Control Frame', async () => {
+    const response = await client.mutate(MockData.Add_Control_Frame);
+    expect(response.errors).toBeUndefined();
+    expect(response.data).toEqual(MockResult.Add_Control_Frame_Mutate);
+  });
+
+  it('Query: Add Control Frame', async () => {
+    const response = await client.query(MockData.All_Query);
+    expect(response.errors).toBeUndefined();
+    expect(response.data).toEqual(MockResult.Add_Control_Frame_Query);
+  });
+
+  it('Mutate: Edit Control Frame', async () => {
+    const response = await client.mutate(MockData.Edit_Control_Frame);
+    expect(response.errors).toBeUndefined();
+    expect(response.data).toEqual(MockResult.Edit_Control_Frame_Mutate);
+  });
+
+  it('Query: Edit Control Frame', async () => {
+    const response = await client.query(MockData.All_Query);
+    expect(response.errors).toBeUndefined();
+    expect(response.data).toEqual(MockResult.Edit_Control_Frame_Query);
+  });
+});
+
+describe('Test2: Add or Edit Position Frame', () => {
+  it('Mutate: Add Position Frame', async () => {
+    const response = await client.mutate(MockData.Add_Position_Frame);
+    expect(response.errors).toBeUndefined();
+    expect(response.data).toEqual(MockResult.Add_Control_Position_Mutate);
+  });
+
+  it('Query: Add Position Frame', async () => {
+    const response = await client.query(MockData.All_Query);
+    expect(response.errors).toBeUndefined();
+    expect(response.data).toEqual(MockResult.Add_Position_Frame_Query);
+  });
+
+  it('Mutate: Edit Position Frame', async () => {
+    const response = await client.mutate(MockData.Edit_Position_Frame);
+    expect(response.errors).toBeUndefined();
+    expect(response.data).toEqual(MockResult.Edit_Position_Frame_Mutate);
+  });
+
+  it('Query: Edit Position Frame', async () => {
+    const response = await client.query(MockData.All_Query);
+    expect(response.errors).toBeUndefined();
+    expect(response.data).toEqual(MockResult.Edit_Position_Frame_Query);
+  });
+});*/

@@ -5,13 +5,21 @@ export const MockResult = {
     "controlFrameIDs": [],
     "positionFrameIDs": [],
     "ControlMap": {
+      "__typename": "Map",
       "frames": {}
     },
     "PosMap": {
-      "frames": {},
-      "colorMap": {
-        "colorMap": {}
-      }
+      "__typename": "Map",
+      "frames": {}
+    },
+    "colorMap": {
+      "__typename": "ColorMap",
+      "colorMap": {}
+    },
+    "effectList": [],
+    "LEDMap": {
+      "__typename": "LEDMap",
+      "LEDMap": {}
     }
   }
 }
